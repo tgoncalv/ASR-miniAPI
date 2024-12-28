@@ -116,4 +116,8 @@ Check Hugging Face ASR Models (https://huggingface.co/models?pipeline_tag=automa
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+It uses OpenAI Whisper for transcription. Whisper model weights are **not included** in this repository. Users must download them from Hugging Face or OpenAI, subject to OpenAI’s license:
+
+[OpenAI Whisper License](https://github.com/openai/whisper/blob/main/LICENSE)
