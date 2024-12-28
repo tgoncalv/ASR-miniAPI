@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      # Hook to update the poetry.lock file if pyproject.toml changes
+      - id: poetry-lock
+        name: Update poetry.lock
+        entry: poetry
+        args: ["lock"]
+        language: system
+        verbose: true
+        pass_filenames: false
+        always_run: true  # Runs every commit to keep requirements.txt updated
+        # files: ^pyproject\.toml$  # Only runs if pyproject.toml changes
+      # Hook to export dependencies to requirements.txt
+      - id: poetry-export
+        name: Export Poetry dependencies to requirements.txt
+        entry: poetry
+        args: ["export", "-f", "requirements.txt", "-o", "requirements.txt", "--without-hashes"]
+        language: system
+        verbose: true
+        pass_filenames: false
+        always_run: true  # Runs every commit to keep requirements.txt updated
+        # files: ^pyproject\.toml$  # Only runs if pyproject.toml changes

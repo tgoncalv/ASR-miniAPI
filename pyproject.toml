@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "asr-miniapi"
+version = "0.1.0"
+description = ""
+authors = ["Taïga Goncalves <taigateo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+transformers = "^4.47.1"
+datasets = "^3.2.0"
+torchaudio = "^2.5.1"
+librosa = "^0.10.2.post1"
+pyannote-audio = "^3.3.2"
+tqdm = "^4.67.1"
+accelerate = "^1.2.1"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.11.4"
+black = "^22.12.0"
+mypy = "^0.991"
+flake8 = "^6.0.0"
+pylint = "^2.15.9"
+codespell = "^2.2.2"
+pyright = "^1.1.287"
+pre-commit = "^4.0.1"
+
+[tool.black]
+line-length = 80
+preview = true
+target-version = ["py39"]
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 80  # to be consistent with black
+skip = ["__init__.py"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
